@@ -144,7 +144,6 @@ void main() {
     });
   });
 
-
   group('getRandomNumberTrivia', () {
     final tNumberTriviaModel = NumberTriviaModel(
       text: 'Test text',
@@ -154,7 +153,7 @@ void main() {
 
     test(
       'should check if the device is online',
-          () async {
+      () async {
         when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
 
         when(mockRemoteDataSource.getRandomNumberTrivia())
@@ -169,7 +168,7 @@ void main() {
     runTestsOnline(() {
       test(
         'should return remote data when the call to remote data source is successful',
-            () async {
+        () async {
           when(mockRemoteDataSource.getRandomNumberTrivia())
               .thenAnswer((_) async => tNumberTriviaModel);
 
@@ -182,7 +181,7 @@ void main() {
 
       test(
         'should cache the data locally when the call to remote data source is successful',
-            () async {
+        () async {
           when(mockRemoteDataSource.getRandomNumberTrivia())
               .thenAnswer((_) async => tNumberTriviaModel);
 
@@ -195,7 +194,7 @@ void main() {
 
       test(
         'should return server failure when the call to remote data source is unsuccessful',
-            () async {
+        () async {
           when(mockRemoteDataSource.getRandomNumberTrivia())
               .thenThrow(ServerException());
 
@@ -211,7 +210,7 @@ void main() {
     runTestsOffline(() {
       test(
         'should return last locally cached data when the cache data is present',
-            () async {
+        () async {
           when(mockLocalDataSource.getLastNumberTrivia())
               .thenAnswer((_) async => tNumberTriviaModel);
           final result = await repository.getRandomNumberTrivia();
@@ -223,7 +222,7 @@ void main() {
 
       test(
         'should return CacheFailure when there is no cached data present',
-            () async {
+        () async {
           when(mockLocalDataSource.getLastNumberTrivia())
               .thenThrow(CacheException());
           final result = await repository.getRandomNumberTrivia();
