@@ -6,7 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tddcource/core/error/exceptions.dart';
 import 'package:tddcource/core/error/failures.dart';
-import 'package:tddcource/core/platform/network_info.dart';
+import 'package:tddcource/core/network/network_info.dart';
 import 'package:tddcource/features/number_trivia/data/datasources/number_trivia_local_data_source.dart';
 import 'package:tddcource/features/number_trivia/data/datasources/number_trivia_remote_data_source.dart';
 import 'package:tddcource/features/number_trivia/data/models/number_trivia_model.dart';
