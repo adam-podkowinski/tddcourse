@@ -25,7 +25,7 @@ void main() {
   });
 
   group('getLastNumberTrivia', () {
-    final tNumberTriviaModel = NumberTriviaModel.fromJSON(
+    final tNumberTriviaModel = NumberTriviaModel.fromJson(
       jsonDecode(
         fixture('trivia_cached.json'),
       ),
@@ -63,7 +63,8 @@ void main() {
     test(
       'should call SharedPreferences to cache the data',
       () async {
-        when(mockSharedPreferences.setString(any, any)).thenAnswer((_) => Future.value(true));
+        when(mockSharedPreferences.setString(any, any))
+            .thenAnswer((_) => Future.value(true));
 
         await dataSource.cacheNumberTrivia(tNumberTriviaModel);
 

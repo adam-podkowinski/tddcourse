@@ -22,7 +22,7 @@ void main() {
       'should return a valid model when the JSON number is an integer',
       () async {
         final Map<String, dynamic> jsonMap = jsonDecode(fixture('trivia.json'));
-        final result = NumberTriviaModel.fromJSON(jsonMap);
+        final result = NumberTriviaModel.fromJson(jsonMap);
         expect(result, tNumberTriviaModel);
       },
     );
@@ -33,7 +33,7 @@ void main() {
         final Map<String, dynamic> jsonMap = jsonDecode(
           fixture('trivia_double.json'),
         );
-        final result = NumberTriviaModel.fromJSON(jsonMap);
+        final result = NumberTriviaModel.fromJson(jsonMap);
         expect(result, tNumberTriviaModel);
       },
     );
